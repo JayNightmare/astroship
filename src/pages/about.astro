@@ -28,13 +28,13 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
         the job. This is what makes our team so special.
       </p>
     </div>
-    <div class="grid md:grid-cols-1 gap-10 mx-auto max-w-4xl mt-12">
+    <div class="gap-10 mx-auto max-w-4xl mt-12">
       {
         publishedTeamMembers.map((teamMemberEntry) => (
           <div class="group">
             <div class="w-full aspect-square">
               <Picture
-                src={teamMemberEntry.data.avatar.src}
+                src="https://media.licdn.com/dms/image/D4E03AQGzQEhF4pkRQA/profile-displayphoto-shrink_800_800/0/1672310328068?e=1701907200&v=beta&t=n1kMwjf_TQq2ivG-0gz_Z1nb2tKLn3f3u6Qa5ay9XRI"
                 alt={teamMemberEntry.data.avatar.alt}
                 sizes="(max-width: 800px) 100vw, 400px"
                 widths={[200, 400]}
