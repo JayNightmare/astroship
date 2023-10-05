@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { Picture } from "@astrojs/image/components";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
@@ -13,46 +14,54 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 <Layout title="About">
   <Container>
     <Sectionhead>
-      <h1 slot="title">About</h1>
-      <h3 slot="desc">We are a small passionate team.</h3>
+      <Fragment slot="title">About</Fragment>
+      <Fragment slot="desc">  </Fragment>
     </Sectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
       <h2 class="font-bold text-3xl text-gray-800">
-        Empowering the world with Astro.
+        Through the power of HTML! 
       </h2>
       <p class="text-lg leading-relaxed text-slate-500">
-        We're a multi-cultural team from around the world! We come from diverse
-        backgrounds, bringing different personalities, experiences and skills to
-        the job. This is what makes our team so special.
+        Hello, and welcome to my profile!
+
+        I'm currently pursuing a degree in Computer Science at Kingston University, 
+        building on my foundation in Applied Science from college. During my childhood, 
+        I played for the Maltese basketball team, my time being a part of the team, I learned how to be 
+        a great team player, possessing a 'can do' attitude. I'm committed to putting in the hard work necessary 
+        to achieve my goals. If you're interested in connecting, please don't hesitate to reach out to me via LinkedIn 
+        anytime. 
+        
+        Thank you for taking the time to get to know me!
       </p>
     </div>
-    <div class="grid md:grid-cols-1 gap-10 mx-auto max-w-4xl mt-12">
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
       {
         publishedTeamMembers.map((teamMemberEntry) => (
-          <>
-            <div class="group">
-              <div class="w-full aspect-square">
-                <div
-                  src={teamMemberEntry.data.avatar.src}
-                  alt={teamMemberEntry.data.avatar.alt}
-                  sizes="(max-width: 800px) 100vw, 400px"
-                  widths={[200, 400]}
-                  aspectRatio="1:1"
-                  background="#ffffff"
-                  fit="cover"
-                  position="center"
-                  class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
-                />
-              </div>
+          <div class="group">
+            <div class="w-full aspect-square">
+              <Picture
+                src={teamMemberEntry.data.avatar.src}
+                alt={teamMemberEntry.data.avatar.alt}
+                sizes="(max-width: 800px) 100vw, 400px"
+                widths={[200, 400]}
+                aspectRatio="1:1"
+                background="#ffffff"
+                fit="cover" 
+                position="center"
+                class = "w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
+              />
             </div>
+
             <div class="mt-4 text-center">
-              <h2 class="text-lg text-gray-800">{teamMemberEntry.data.name}</h2>
+              <h2 class="text-lg text-gray-800">
+                {teamMemberEntry.data.name}
+              </h2>
               <h3 class="text-sm text-slate-500">
                 {teamMemberEntry.data.title}
               </h3>
             </div>
-          </>
+          </div>
         ))
       }
     </div>
