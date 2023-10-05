@@ -1,6 +1,6 @@
-# Astroship - Astro Starter Template 🛸
+# Astroship - Astro  🛸
 
-Astroship is a starter template for startups, marketing websites, landing pages & blog. Built with Astro & TailwindCSS.
+Astroship is a template for startups, marketing websites, landing pages & blog. Built with Astro & TailwindCSS.
 
 This Free Template is sponsored by [Web3Templates](https://web3templates.com)
 
