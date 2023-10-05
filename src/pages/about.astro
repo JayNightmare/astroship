@@ -1,6 +1,5 @@
 ---
-import { getCollection } from "astro:content";
-import { Picture } from "@astrojs/image/components";
+import { getCollection }from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
@@ -14,8 +13,8 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 <Layout title="About">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">About</Fragment>
-      <Fragment slot="desc">We are a small passionate team.</Fragment>
+      <h1 slot="title">About</h1>
+      <h3 slot="desc">We are a small passionate team.</h3>
     </Sectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
@@ -28,12 +27,12 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
         the job. This is what makes our team so special.
       </p>
     </div>
-    <div class="gap-10 mx-auto max-w-4xl mt-12">
+    <div class="grid md:grid-cols-1 gap-10 mx-auto max-w-4xl mt-12">
       {
         publishedTeamMembers.map((teamMemberEntry) => (
           <div class="group">
             <div class="w-full aspect-square">
-              <Picture
+              <div
                 src={teamMemberEntry.data.avatar.src}
                 alt={teamMemberEntry.data.avatar.alt}
                 sizes="(max-width: 800px) 100vw, 400px"
@@ -44,6 +43,7 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
                 position="center"
                 class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
               />
+              </div>
             </div>
 
             <div class="mt-4 text-center">
