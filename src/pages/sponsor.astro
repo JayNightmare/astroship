@@ -6,9 +6,9 @@ import PricingCard from "@components/pricing.astro";
 
 const pricing = [
   {
-    name: "Personal",
-    price: "Free",
-    popular: false,
+    name: "Github",
+    price: "$1",
+    popular: true,
     features: [
       "Community Support"
     ],
@@ -25,11 +25,11 @@ const pricing = [
     <Sectionhead>
       <Fragment slot="title">Sponsor Me</Fragment>
       <Fragment slot="desc">
-        Simple & Easy prices. No Surprises.
+        Simple & Easy price. No Surprises.
       </Fragment>
     </Sectionhead>
 
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12" style="justify-content: center;">
       {pricing.map((item) => <PricingCard plan={item} />)}
     </div>
   </Container>
