@@ -59,10 +59,19 @@ const makeTitle = title
     <Footer />
     <style is:global>
       /* Improve Page speed */
-      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */      
       img {
         content-visibility: auto;
       }
+
+      body {
+        background: black;
+      }
+      
+      a, h1, p, h3, h2 {
+        color: var(--text-white);
+      }
+
     </style>
   </body>
 </html>
