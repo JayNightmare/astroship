@@ -37,7 +37,7 @@ const features = [
 <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16 into-divs">
   {
     features.map((item) => (
-      <div class="flex gap-4 items-start border-round">
+      <div class="flex gap-4 items-start border-round transition group-hover:-translate-y-1 group-hover:shadow-xl">
         <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
           <Icon class="text-white" name={item.icon} />
         </div>
