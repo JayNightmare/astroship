@@ -12,17 +12,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 const resolvedImageWithDomain = new URL(
   "/opengraph.jpg",
-  Astro.site
+  Astro.site,
 ).toString();
 
 const { title } = Astro.props;
 
-const makeTitle = title
-  ? title + " | " + "My Portfolio"
-  : "Portfolio";
+const makeTitle = title ? title + " | " + "My Portfolio" : "Portfolio";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -59,16 +57,23 @@ const makeTitle = title
     <Footer />
     <style is:global>
       /* Improve Page speed */
-      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */      
+      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
       img {
-        content-visibility: auto; 
+        content-visibility: auto;
       }
 
       body {
         background: black;
       }
-      
-      a, h1, p, h3, h2, div, svg, span {
+
+      a,
+      h1,
+      p,
+      h3,
+      h2,
+      div,
+      svg,
+      span {
         color: white !important;
       }
 
@@ -77,20 +82,45 @@ const makeTitle = title
         padding: 1.25em;
         border: 1px solid #212121;
         border-radius: 5px;
-        
       }
 
       .animationFeeder {
         position: absolute;
-
+        left: 450px;
+        top: 10px;
+        bottom: 0;
         animation: 5s animationFeeder ease 1;
       }
 
-      @keyframes animationFeeder {
-        0%{ left: 90px; opacity: 0; }
-        25%{ opacity: 0; }  
+      .floatStillMan {
+        animation-delay: 2s;
+        animation: 5s floatStill ease-in-out infinite;
       }
 
+      @keyframes animationFeeder {
+        0% {
+          left: 600px;
+          opacity: 0;
+        }
+
+        25% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes floatStill {
+        0% {
+          top: 10px;
+        }
+
+        50% {
+          top: -15px;
+        }
+
+        100% {
+          top: 10px;
+        }
+      }
     </style>
   </body>
 </html>
