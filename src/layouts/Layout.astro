@@ -89,12 +89,9 @@ const makeTitle = title ? title + " | " + "My Portfolio" : "Portfolio";
         left: 650px;
         top: 10px;
         bottom: 0;
-        animation: 5s animationFeeder ease 1;
-      }
-
-      .floatStillMan {
-        animation-delay: 2s;
-        animation: 5s floatStill ease-in-out infinite;
+        animation-name: animationFeeder, floatStill;
+        animation-duration: 5s;
+        animation-iteration-count: 1, infinite;
       }
 
       @keyframes animationFeeder {
