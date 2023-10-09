@@ -1,8 +1,10 @@
 ---
 import { SEO } from "astro-seo";
+import { Picture } from "@astrojs/image/components";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
+import { Component } from "discord.js";
 
 export interface Props {
   title: string;
@@ -125,6 +127,11 @@ const makeTitle = title ? title + " | " + "My Portfolio" : "Portfolio";
 
       .paddingDown { 
         padding-top: 80px;
+      }
+
+      .background-image {
+        width: 100%;
+        height: 100%;
       }
 
     </style>
