@@ -89,7 +89,7 @@ const makeTitle = title ? title + " | " + "My Portfolio" : "Portfolio";
       .animationFeeder {
         position: absolute;
         left: 50%;
-        top: 1%;
+        top: 5%;
         bottom: 0;
         animation-name: animationFeeder, floatStill;
         animation-duration: 5s;
@@ -109,31 +109,17 @@ const makeTitle = title ? title + " | " + "My Portfolio" : "Portfolio";
 
       @keyframes floatStill {
         0% {
-          top: 17%;
+          top: 2%;
         }
 
         50% {
-          top: 15%;
+          top: 8%;
         }
 
-        100% {
-          top: 17%;
+        to {
+          top: 2%;
         }
       }
-
-      ::-webkit-scrollbar {
-          width: 0px;
-      }
-
-      .paddingDown { 
-        padding-top: 80px;
-      }
-
-      .background-image {
-        width: 100%;
-        height: 100%;
-      }
-
     </style>
   </body>
 </html>
