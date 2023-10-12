@@ -7,6 +7,12 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
+  output: 'server',
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
   site: "https://astroship.web3templates.com",
   integrations: [
     tailwind(),
@@ -16,11 +22,5 @@ export default defineConfig({
     mdx(),
     sitemap(),
   ],
-  output: 'server',
-  adapter: vercel({
-    webAnalytics: {
-      enabled: true,
-    },
-  }),
 });
 
