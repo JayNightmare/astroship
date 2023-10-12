@@ -1,11 +1,8 @@
 ---
 import { SEO } from "astro-seo";
-import { Picture } from "@astrojs/image/components";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
-import { Component } from "discord.js";
-import { Analytics } from '@vercel/analytics/react';
 
 export interface Props {
   title: string;
@@ -31,7 +28,6 @@ const makeTitle = title ? title + " | " + "My Portfolio" : "Portfolio";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
-    <Analytics />
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
