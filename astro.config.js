@@ -13,7 +13,7 @@ export default defineConfig({
       enabled: true,
     },
   }),
-  site: "https://astroship.web3templates.com",
+  site: "https://nexusgit.info",
   integrations: [
     tailwind(),
     image({
